@@ -1,0 +1,60 @@
+@mixin mediaQuery($size) {
+    @if ($size == mobile) {
+        @media (max-width : 767px) {
+            @content ; 
+        }
+    }
+    @else if ($size == small) {
+        @media (min-width : 768px) and (max-width : 991px) {
+            @content ; 
+        }
+    }
+    @else if ($size == medium) {
+        @media (min-width : 992px) and (max-width : 1199px) {
+            @content ; 
+        }
+    }
+    @else if ($size == large) {
+        @media (min-width : 1200px) {
+            @content ; 
+        }
+    }
+    @else if ($size == allExceptLarge) {
+        @media (max-width : 991px){
+            @content ; 
+        }
+    }
+}
+@mixin flex ( $horizontal-align, $vertical-align , $direction , $gap) {
+    display: flex;
+    justify-content: $horizontal-align;
+    align-items: $vertical-align;
+    flex-direction: $direction;
+    gap: $gap;
+}
+@mixin grid ($gridTemplateColumns , $gap) {
+    display: grid;
+    grid-template-columns: $gridTemplateColumns;
+    gap: $gap;
+}
+@mixin transition ($time) {
+    transition: $time;
+    -webkit-transition: $time;
+    -moz-transition: $time;
+    -ms-transition: $time;
+    -o-transition: $time;
+}
+@mixin mainButton($color , $backgroundColor , $borderColor) {
+    color: $color;
+    padding: 13px 20px;
+    @include radius(30px) ; 
+    background-color: $backgroundColor;
+    border: solid 1px $borderColor ;
+}
+@mixin radius($r) {
+    border-radius: $r;
+    -webkit-border-radius: $r;
+    -moz-border-radius: $r;
+    -ms-border-radius: $r;
+    -o-border-radius: $r;
+}

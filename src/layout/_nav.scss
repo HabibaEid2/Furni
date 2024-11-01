@@ -1,0 +1,39 @@
+@use './variables' as * ; 
+@use './mixins' as * ;
+nav {
+    background-color: $main-color ; 
+    padding: 40px 0;
+    color: white;
+    overflow: hidden;
+    .container {  
+        @include grid(50% 50% , 0) ; 
+        align-items: center;
+        @include mediaQuery(allExceptLarge) {
+            display: block ; 
+        }
+        .content {
+            margin-top: -122px;
+            @include mediaQuery(allExceptLarge) {
+                margin-top: 0px;
+            }
+            height: fit-content;
+            h1 {
+                font-size: 40px;
+                font-weight: bold;
+            }
+            p {
+                color: $para-second-color;
+            }
+            .buttons {
+                margin-top: 35px;
+                .shopNow {
+                    margin-right: 7px;
+                    @include mainButton(black , $gold-color , $gold-color)
+                }
+                .explore {
+                    @include mainButton(white , transparent , white) ; 
+                }
+            }
+        }
+    }
+}

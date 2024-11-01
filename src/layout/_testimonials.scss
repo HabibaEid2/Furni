@@ -1,0 +1,51 @@
+@use './variables' as * ; 
+@use './mixins' as * ; 
+.testimonials {
+    padding: $section-padding;
+    text-align: center;
+    h1 {
+        margin-bottom: 70px;
+    }
+    p {
+        padding: 0 90px;
+        @include mediaQuery(mobile) {
+            padding: 0 ;
+        }
+    }
+    .person {
+        .name {
+            font-weight:bold ;
+        }
+        .rule {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    }
+    .carousel-indicators {
+        bottom: -70px;
+        button {
+            width: 7px;
+            height: 7px;
+            margin-right: 7px;
+            @include radius(50%) ;
+            background-color: rgba(59, 93, 80, 0.1);
+            &.active {
+                background-color: $main-color;
+            }
+        }
+    }
+    a {
+        &[class *= "carousel-control"] span{
+            @include mediaQuery(mobile) {
+                display: none;
+            }
+            background-color: rgb(59 93 80 / 32%);
+            @include radius(50%) ; 
+        }
+    }
+    img {
+        margin: 20px 0;
+        width: 80px;
+        @include radius(50%) ; 
+    }
+}

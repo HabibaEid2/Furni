@@ -1,0 +1,99 @@
+@use './variables' as * ; 
+@use './mixins' as *  ; 
+.services {
+    padding: $section-padding;
+    .content {
+        @include grid(55% 40% , 50px) ;
+        @include mediaQuery(allExceptLarge) {
+            @include grid(1fr , 80px) ;
+        }
+        .images {
+            position: relative;
+            @include grid(70% 30% , 20px) ;
+            justify-content: center;
+
+            .imgGrid3 {
+                position: absolute;
+                bottom: -47px;
+                right: 21px;
+                width: 50%;
+            }
+            .dots-green-img {
+                position: absolute;
+                top: -46px;
+                left: -54px;
+                z-index: -1;
+                width: 236px;
+                @include radius(0) ; 
+            }
+            img {
+                width: 100%;
+                @include radius(20px) ; 
+            }
+        }
+        .text-content {
+            ul {
+                padding: 24px 0;
+                @include grid(1fr 1fr , 10px) ; 
+                li {
+                    position: relative;
+                    padding-left: 20px;
+                }
+                li::after {
+                    content: '';
+                    position: absolute;
+                    top: 11px;
+                    left: 0px;
+                    width: 8px;
+                    height: 8px;
+                    border: solid 2px $main-color;
+                    @include radius(50%) ; 
+                }
+            }
+            button {
+                @include mainButton(white , #2f2f2f , #2f2f2f) ;
+                font-weight: bold  ;
+            }
+        }
+    }
+    .items {
+        margin-top:100px ; 
+        @include grid(1fr 1fr 1fr, 20px) ;
+        @include mediaQuery(small) {
+            @include grid(1fr 1fr, 20px) ;
+        }
+        @include mediaQuery(mobile) {
+            @include grid(1fr, 20px) ;
+        }
+        flex-wrap: wrap;
+        .item {
+            @include flex(center , center , row , 15px) ; 
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 26px;
+                left: 9px;
+                width: 100px;
+                height: 74%;
+                background-color: rgb(220, 229, 228);
+                @include radius(20px) ; 
+                z-index: -1;
+            }
+            img {
+                width: 120px;
+            }
+            a {
+                color: #585858;
+                font-size: 14px;
+                @include transition(.3s) ; 
+                &:hover {
+                    color: #737373;
+                }
+            }
+        }
+    }
+    p {
+        font-size: .93rem ; 
+    }
+}

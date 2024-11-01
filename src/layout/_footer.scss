@@ -1,0 +1,111 @@
+@use './variables' as * ; 
+@use './mixins' as * ; 
+
+footer {
+    padding: $section-padding;
+    background-color: white;
+    position: relative;
+    .subscribe {
+        margin-top: 55px;
+        position: relative;
+        flex-wrap: wrap;
+        h5 {
+            font-size: 1.15rem;
+            margin-left: 31px;
+            color: $main-color;
+        }
+        .email-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .content {
+            @include flex(flex-start , center , row , 15px) ; 
+            flex-wrap: wrap;
+            margin-top: 15px;
+            input {
+                border: solid 1px #ccc;
+                padding: 10px;
+                @include radius (12px) ; 
+            }
+            button {
+                @include mainButton(white,$main-color,$main-color);
+                padding: 10px 30px;
+                @include radius(15px) ; 
+            }
+        }
+    }
+    .footer-main-content {
+        margin: 90px 0;
+        @include grid(1fr 2fr , 30px) ;
+        @include mediaQuery(allExceptLarge) {
+            @include grid(1fr , 30px) ;
+        }
+        align-items: center;
+        .info-and-contact-us {
+            h2 {
+                color: $main-color;
+            }
+            p {
+                font-size: .93rem;
+            }
+            i {
+                background-color: rgb(220, 229, 228);
+                @include radius(50%) ; 
+                padding: 10px;
+                color: $main-color;
+                margin-right:8px ;
+                margin: 10px 8px 0 0 ;
+                &[class *= "facebook"] {
+                    padding: 10px 12px;
+                }
+                @include transition(.3s) ; 
+                &:hover {
+                    color: white;
+                    background-color: $main-color;
+                }
+            }
+        }
+        .items {
+            margin-top: 23px ; 
+            @include grid(1fr 1fr 1fr 1fr , 15px) ; 
+            @include mediaQuery(mobile) {
+                @include grid(1fr 1fr , 15px) ; 
+            }
+            align-items: start;
+            ul {
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: .93rem;
+                font-size: 14px;
+                color: #3f3f3f;
+            }
+        }
+    }
+    .bottom-content {
+        margin-top: 20px ; 
+        @include flex(space-between , flex-start , row , 1px) ; 
+        @include mediaQuery (allExceptLarge) {
+            text-align: center ; 
+            @include flex(center , center , column , 1px) ;
+        }
+        a {
+            color: black ; 
+            @include transition(.3s) ; 
+        }
+        a:hover {
+            color: #8f8f8f;
+        }
+        div {
+            a {
+                margin-right: 20px;
+            }
+        }
+    }
+    .sofa-img {
+        position: absolute;
+        right: 0;
+        top: -110px;
+        max-width: 317px;
+    }
+}

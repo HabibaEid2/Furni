@@ -1,0 +1,75 @@
+@use './variables' as *; 
+@use './mixins' as * ; 
+header {
+    padding: 20px;
+    background-color: $main-color;
+    .container {
+        position: relative;
+        @include flex(space-between , center , row  , 0) ; 
+        @include mediaQuery(allExceptLarge) {
+            @include flex(space-between , flex-start , column , 10px) ; 
+        }
+        .logo {
+            font-size: 37px;
+            color: white;
+            font-weight: bold;
+            span {
+                color: $para-second-color;
+            }
+        }
+
+        .header-content {
+            ul {
+                @include flex(center , center , row , 30px) ; 
+                @include transition(.3s) ; 
+                @include mediaQuery(allExceptLarge) {
+                    height: 0 ; 
+                    overflow: hidden ; 
+                    @include flex(center , flex-start , column , 0) ; 
+                }
+                li {
+                    padding: 10px 0;
+                    font-size: 14px;
+                    font-weight: 700;
+                    font-family: $main-font;
+                    color: $para-second-color;
+                    position: relative;
+        
+                    @include transition(.2s) ; 
+                    
+                    &:not(.icons):after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 4px;
+                        background-color: $gold-color;
+                        @include transition(.2s) ; 
+                    } 
+                    &:hover {
+                        color: white;
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            i {
+                font-size: 20px;
+                color: white;
+                margin-right: 20px;
+                &.menu {
+                    position: absolute;
+                    top: 22px ; 
+                    right: 0;
+                    display: none;
+                    @include mediaQuery(allExceptLarge) {
+                        display: block;
+                    }
+                }
+            }            
+        }
+    }
+}
