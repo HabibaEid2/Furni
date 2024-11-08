@@ -1,0 +1,52 @@
+@use './../variables' as *; 
+@use './../mixins' as * ; 
+
+.cart-page {
+    padding: $section-padding;
+    table {
+        width: 100%;
+        thead {
+            tr {
+                border-bottom: solid 2px black;
+            }
+        }
+        tr {
+            padding-bottom: 10px  ;
+            margin-bottom: 10px ;
+            @include grid(1fr 1fr 1fr 1fr 1fr 1fr , 0) ; 
+            text-align: center;
+            align-items: center;
+            justify-content: space-between;
+            td {
+                img {
+                    width: 100%;
+                }
+                &.name {
+                    font-weight: 600 ; 
+                }
+                &.quantity {
+                    @include flex(center , center , row , 5px) ; 
+                    .value {
+                        padding: 8px 15px;
+                        background-color: white;
+                        border: solid 1px #d5d5d5;
+                    }
+                    button {
+                        border: none;
+                    }
+                }
+            }
+
+            &.empty-cart {
+                grid-template-columns: 1fr;
+                td {
+                    padding: 20px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: $main-color;
+                    text-decoration: underline;
+                }
+            }
+        } 
+    }
+}

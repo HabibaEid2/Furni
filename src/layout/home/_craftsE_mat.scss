@@ -1,0 +1,22 @@
+@use './../variables' as * ; 
+@use './../mixins' as * ; 
+
+.excellent-material {
+    padding: $section-padding;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mediaQuery(allExceptLarge) {
+            display: block;
+        }
+    }
+    h2 {
+        margin-bottom: 30px
+    }
+    button {
+        @include mainButton(white , #2f2f2f , #2f2f2f) ;
+        font-weight: bold
+    }
+    
+}

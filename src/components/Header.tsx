@@ -37,7 +37,9 @@ export default function Header() {
                         </li>
                         <li className="icons">
                             <i className="fa-regular fa-user"></i>
-                            <i className="fa-solid fa-cart-shopping"></i>
+                            <Link to = '/cart'>
+                                <i className="fa-solid fa-cart-shopping"></i>
+                            </Link>
                         </li>
                     </ul>
                     <i onClick={handleMenu} className="fa-solid fa-bars menu"></i>

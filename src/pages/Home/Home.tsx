@@ -9,7 +9,6 @@ import Testimonials from "./Testimonials";
 export default function Home() {
     return (
         <>
-        <Header/>
         <Nav/>
         <CraftsWithE_Materail/>
         <ChooseUs/>

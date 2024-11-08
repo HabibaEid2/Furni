@@ -1,9 +1,15 @@
 @use './layout/constants' ; 
 @use './layout/header' ; 
-@use './layout/nav' ; 
-@use './layout/craftsE_mat' ; 
-@use './layout/chooseUs' ; 
-@use './layout/services' ; 
-@use './layout/testimonials' ; 
-@use './layout/recentBlog' ; 
+//home
+@use './layout/home/nav' ; 
+@use './layout/home/craftsE_mat' ; 
+@use './layout/home/chooseUs' ; 
+@use './layout/home/services' ; 
+@use './layout/home/testimonials' ; 
+@use './layout/home/recentBlog' ; 
+// shop
+@use './layout/shop/shop' ; 
+// cart
+@use './layout/cart/cart' ; 
+// footer
 @use './layout/footer' ; 
