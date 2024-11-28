@@ -1,0 +1,46 @@
+@use './variables' as * ; 
+@use './mixins' as * ; 
+
+.about-us-page {
+    padding: $section-padding;
+    .our-team {
+        h1 {
+            color: #505050;
+            margin: 30px;
+            text-align: center;
+            text-decoration: underline;
+        }
+        ul {
+            @include mediaQuery(large) {
+                @include grid(1fr 1fr 1fr 1fr , 30px) ; 
+            }
+            @include mediaQuery(medium) {
+                @include grid(1fr 1fr 1fr , 30px) ; 
+            }
+            @include mediaQuery(small) {
+                @include grid(1fr 1fr , 30px) ; 
+            }
+            @include mediaQuery(mobile) {
+                @include grid(1fr , 30px) ; 
+            }
+            li {
+                img {
+                    width: 100%;
+                }
+                h4 {
+                    color:#505050;
+                    margin: 20px 0px 2px;
+                }
+                .jop {
+                    margin-bottom: 20px;
+                }
+                .learn-more {
+                    color: #505050;
+                    font-weight: 600;
+                    text-decoration: underline;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

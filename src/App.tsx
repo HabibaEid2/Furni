@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { currentPage } from "./Context";
 import Shop from "./pages/Shop/Shop";
 import Footer from "./components/Footer";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 export default function App () {
     const context = useContext(currentPage) ; 
@@ -19,6 +20,7 @@ export default function App () {
             <Route element = {<Home/>} path="/home"/>
             <Route element = {<Cart/>} path="/cart"/>
             <Route element = {<Shop/>} path="/shop"/>
+            <Route element = {<AboutUs/>} path="/about-us"/>
         </Routes>
         <Footer/>
         </>

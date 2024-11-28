@@ -557,6 +557,7 @@ nav .container .content .buttons .explore {
   text-align: center;
 }
 .testimonials h1 {
+  color: #505050;
   margin-bottom: 70px;
 }
 .testimonials p {
@@ -568,6 +569,7 @@ nav .container .content .buttons .explore {
   }
 }
 .testimonials .person .name {
+  color: #505050;
   font-weight: bold;
 }
 .testimonials .person .rule {
@@ -685,6 +687,60 @@ nav .container .content .buttons .explore {
   -moz-column-gap: 20px;
        column-gap: 20px;
   margin-bottom: 50px;
+}
+
+.about-us-page {
+  padding: 112px 0;
+}
+.about-us-page .our-team h1 {
+  color: #505050;
+  margin: 30px;
+  text-align: center;
+  text-decoration: underline;
+}
+@media (min-width: 1200px) {
+  .about-us-page .our-team ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about-us-page .our-team ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .about-us-page .our-team ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .about-us-page .our-team ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+.about-us-page .our-team ul li img {
+  width: 100%;
+}
+.about-us-page .our-team ul li h4 {
+  color: #505050;
+  margin: 20px 0px 2px;
+}
+.about-us-page .our-team ul li .jop {
+  margin-bottom: 20px;
+}
+.about-us-page .our-team ul li .learn-more {
+  color: #505050;
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 14px;
 }
 
 .cart-page {
