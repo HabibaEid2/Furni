@@ -8,7 +8,7 @@ import product3Img from './../../assets/product-3.png'
 import { Link } from 'react-router-dom';
 export default function  Services() {
     return (
-        <section className="services">
+        <section className="services section-padding">
             <div className="container">
                 <div className="content">
                     <div className="images">

@@ -2,7 +2,7 @@ import { Carousel } from "react-bootstrap";
 import person1Img from './../../assets/person-1.jpg' ; 
 export default function Testimonials () {
     return (
-        <section className="testimonials">
+        <section className="testimonials section-padding">
             <div className="container">
             <h1>Testimonials</h1>
             <Carousel data-bs-theme="dark">

@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react"
-import { currentPage } from "../../Context"
-import { data, productData } from "../../api/Api";
+import { currentPage } from "../Context"
+import { data, productData } from "../api/Api";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/reducers";
-import { appDispatch, rootState } from "../../redux/store";
+import { addToCart } from "../redux/reducers";
+import { appDispatch, rootState } from "../redux/store";
 
 export default function Shop(){
     const productsData = [] ; 
@@ -39,10 +39,10 @@ export default function Shop(){
     }
     const context = useContext(currentPage) ; 
     useEffect(() => {
-        context?.setPage('shop') ; 
+        context?.setPage('SHOP') ; 
     } , [])
     return (
-        <div className="shop">
+        <div className="shop section-padding">
             <div className="container">
                 <div className="products">
                 {

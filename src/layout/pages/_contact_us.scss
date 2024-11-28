@@ -1,0 +1,55 @@
+@use './../variables' as * ; 
+@use './../mixins' as * ; 
+
+.contact-page {
+    .container {
+        max-width: 700px ; 
+        .contact-info {
+            @include mediaQuery(mobile) {
+                @include grid(1fr , 15px) ; 
+                align-items: flex-start  ; 
+            } 
+            @include grid(1fr 1fr 1fr , 15px) ; 
+            align-items: center ;
+            li {
+                @include flex (flex-start , center , row , 10px) ; 
+                .icon {
+                    color: white;
+                    background-color: $main-color;
+                    width: fit-content;
+                    padding: 10px 20px;
+                    @include radius(5px) ; 
+                }
+                .disc {
+                    font-size: 14px;
+                }
+            }
+        }
+        form {
+            padding: 50px 0;
+            .userName {
+                @include grid(1fr 1fr , 10px) ; 
+            }
+            input , textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom:10px ;
+                border: solid 1px #a1a0a0;
+                @include radius (5px) ; 
+                &:focus {
+                    outline: none;
+                }
+            }
+            textarea {
+                min-height: 190px;
+            }
+            label {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            button {
+                @include mainButton(white , #2f2f2f , #2f2f2f) ;
+            }
+        }
+    }
+}

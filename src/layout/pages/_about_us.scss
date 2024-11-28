@@ -1,8 +1,7 @@
-@use './variables' as * ; 
-@use './mixins' as * ; 
+@use './../variables' as * ; 
+@use './../mixins' as * ; 
 
 .about-us-page {
-    padding: $section-padding;
     .our-team {
         h1 {
             color: #505050;

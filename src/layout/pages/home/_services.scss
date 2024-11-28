@@ -1,7 +1,6 @@
-@use './../variables' as * ; 
-@use './../mixins' as *  ; 
+@use './../../variables' as * ; 
+@use './../../mixins' as *  ; 
 .services {
-    padding: $section-padding;
     .content {
         @include grid(55% 40% , 50px) ;
         @include mediaQuery(allExceptLarge) {

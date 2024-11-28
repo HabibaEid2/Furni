@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
-import ChooseUs from "../Home/ChooseUs";
-import employee1Img from './../../assets/person_1.jpg' 
-import employee2Img from './../../assets/person_2.jpg' 
-import employee3Img from './../../assets/person_3.jpg' 
-import employee4Img from './../../assets/person_4.jpg' 
-import Testimonials from "../Home/Testimonials";
+import ChooseUs from "./Home/ChooseUs";
+import employee1Img from './../assets/person_1.jpg' 
+import employee2Img from './../assets/person_2.jpg' 
+import employee3Img from './../assets/person_3.jpg' 
+import employee4Img from './../assets/person_4.jpg' 
+import Testimonials from "./Home/Testimonials";
+import { useContext, useEffect } from "react";
+import { currentPage } from "../Context";
 
 export default function AboutUs() {
+    const context = useContext(currentPage) ; 
+    useEffect(() => {
+        context?.setPage('ABOUT US') ; 
+    } , [])
     return (
-        <div className="about-us-page">
+        <div className="about-us-page section-padding">
             <div className="container">
                 <ChooseUs/>
                 <div className="our-team">

@@ -23,8 +23,14 @@ i {
 .para {
     color: $para-color;
 }
+.section-padding {
+    padding: 122px 0 ; 
+}
 .products {
     @include flex(center , center , row , 20px) ; 
+    @include mediaQuery(allExceptLarge) {
+        @include flex(center , center , row , 67px) ; 
+    }
     @include mediaQuery(mobile) {
         flex-direction: column;
     }
@@ -37,7 +43,7 @@ i {
             position: absolute;
             bottom: -50px;
             left: 0;
-            width: 107%;
+            width: 100%;
             @include radius(22px) ;
             height: 0%;
             background-color: rgb(220, 229, 228);

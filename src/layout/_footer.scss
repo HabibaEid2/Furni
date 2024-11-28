@@ -2,7 +2,6 @@
 @use './mixins' as * ; 
 
 footer {
-    padding: $section-padding;
     background-color: white;
     position: relative;
     .subscribe {

@@ -4,7 +4,7 @@ import item2 from './../../assets/product-2.png' ;
 import item3 from './../../assets/product-3.png' ; 
 export default function CraftsWithE_Materail() {
     return (
-        <section className="excellent-material">
+        <section className="excellent-material section-padding">
             <div className="container">
                 <div className="content">
                     <h2>Crafted with excellent material.</h2>
@@ -16,28 +16,28 @@ export default function CraftsWithE_Materail() {
                 </div>
 
                 <div className="products">
-                    <Link to={'./item1'} className="item">
+                    <Link to={'#'} className="item">
                         <img src={item1} alt="product1" />
                         <h6>Nordic Chair</h6>
                         <div className="price">$50.0</div>
-                        <button className="addToCart">
-                            <i className="fa-solid fa-plus"></i>
+                        <button style ={{cursor : 'not-allowed'}} className="addToCart">
+                            <i style ={{cursor : 'not-allowed'}} className="fa-solid fa-plus"></i>
                         </button>
                     </Link>
-                    <Link to={'./item2'} className="item">
+                    <Link to={'#'} className="item">
                         <img src={item2} alt="product2" />
                         <h6>Kruzo Aero Chair</h6>
                         <div className="price">$78.0</div>
-                        <button className="addToCart">
-                            <i className="fa-solid fa-plus"></i>
+                        <button style ={{cursor : 'not-allowed'}} className="addToCart">
+                            <i style ={{cursor : 'not-allowed'}} className="fa-solid fa-plus"></i>
                         </button>
                     </Link>
-                    <Link to={'./item3'} className="item">
+                    <Link to={'#'} className="item">
                         <img src={item3} alt="product3" />
                         <h6>Ergonomic Chair</h6>
                         <div className="price">$43.0</div>
-                        <button className="addToCart">
-                            <i className="fa-solid fa-plus"></i>
+                        <button style ={{cursor : 'not-allowed'}} className="addToCart">
+                            <i style ={{cursor : 'not-allowed'}} className="fa-solid fa-plus"></i>
                         </button>
                     </Link>
                 </div>

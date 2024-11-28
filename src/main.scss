@@ -1,17 +1,19 @@
 @use './layout/constants' ; 
 @use './layout/header' ; 
 //home
-@use './layout/home/nav' ; 
-@use './layout/home/craftsE_mat' ; 
-@use './layout/home/chooseUs' ; 
-@use './layout/home/services' ; 
-@use './layout/home/testimonials' ; 
-@use './layout/home/recentBlog' ; 
+@use './layout/pages/home/nav' ; 
+@use './layout/pages/home/craftsE_mat' ; 
+@use './layout/pages/home/chooseUs' ; 
+@use './layout/pages/home/services' ; 
+@use './layout/pages/home/testimonials' ; 
+@use './layout/pages/home/recentBlog' ; 
 // shop
-@use './layout/shop/shop' ; 
+@use './layout/pages/shop' ; 
 //about-us
-@use './layout/about_us' ; 
+@use './layout/pages/about_us' ; 
+// contact us
+@use './layout/pages/contact_us' ; 
 // cart
-@use './layout/cart/cart' ; 
+@use './layout/pages/cart' ; 
 // footer
 @use './layout/footer' ; 

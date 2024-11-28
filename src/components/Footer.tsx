@@ -3,7 +3,7 @@ import emailImg from './../assets/envelope-outline.svg' ;
 import sofaImg from './../assets/sofa.png' ; 
 export default function Footer () {
     return (
-        <footer>
+        <footer className='section-padding'>
             <div className="container">
                 <div className="subscribe">
                     <img className='email-img' src={emailImg} alt="email image" />

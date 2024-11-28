@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
-import Nav from "../../components/Nav";
 import ChooseUs from "./ChooseUs";
 import CraftsWithE_Materail from "./CraftsWithE_Material";
-import RecentBlog from "./RecentBlog";
+import BlogContent from "./BlogContent";
 import Services from "./Services";
 import Testimonials from "./Testimonials";
 import { currentPage } from "../../Context";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     const context = useContext(currentPage) ; 
@@ -14,12 +14,19 @@ export default function Home() {
     } , [])
     return (
         <>
-        <Nav page = {'home'}/>
         <CraftsWithE_Materail/>
         <ChooseUs/>
         <Services/>
         <Testimonials/>
-        <RecentBlog/>
+        <section className="recent-blog section-padding">
+            <div className="container">
+                <div className="head">
+                    <h2>Recent Blog</h2>
+                    <Link to = "/">View All Posts</Link>
+                </div>
+                <BlogContent/>
+            </div>
+        </section>
         </>
     )
 }

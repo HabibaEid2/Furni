@@ -2,7 +2,6 @@
 @use './../mixins' as * ; 
 
 .shop {
-    padding: $section-padding;
     .products {
         flex-wrap: wrap;
         row-gap: 90px;

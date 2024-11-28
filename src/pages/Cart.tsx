@@ -1,8 +1,8 @@
 import  { ReactNode, useContext, useEffect, useState } from "react";
-import { currentPage } from "../../Context";
+import { currentPage } from "../Context";
 import { useDispatch, useSelector } from "react-redux";
-import { appDispatch, rootState } from "../../redux/store";
-import { decrease, increase, removeFromCart } from "../../redux/reducers";
+import { appDispatch, rootState } from "../redux/store";
+import { decrease, increase, removeFromCart } from "../redux/reducers";
 
 export default function Cart() {
     const [cartProducts , setCartProducts] = useState<ReactNode[]>([]) ; 
@@ -46,7 +46,7 @@ export default function Cart() {
     } , [cartProductsSelector])
     return (
         <>
-        <div className="cart-page">
+        <div className="cart-page section-padding">
             <div className="container">
                 <table>
                     <thead>
