@@ -1,10 +1,15 @@
 import couchImg from './../assets/couch.png' ; 
-export default function Nav() {
+export default function Nav(props  : {page : string | null}) {
     return (
         <nav>
             <div className="container">
                 <div className="content">
-                    <h1>Modern Interior Design Studio</h1>
+                    <h1>
+                        {
+                            props.page === 'home' ? "Modern Interior Design Studio" : props.page
+                        }
+                        
+                    </h1>
                     <p className='para'>
                     Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit.
                     Aliquam vulputate velit imperdiet dolor tempor tristique.

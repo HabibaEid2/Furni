@@ -709,7 +709,7 @@ nav .container .content .buttons .explore {
 .cart-page table tr td img {
   width: 100%;
 }
-.cart-page table tr td.name {
+.cart-page table tr td.productName {
   font-weight: 600;
 }
 .cart-page table tr td.quantity {
@@ -726,6 +726,9 @@ nav .container .content .buttons .explore {
 }
 .cart-page table tr td.quantity button {
   border: none;
+}
+.cart-page table tr td i[class*=trash] {
+  color: #c92b2b;
 }
 .cart-page table tr.empty-cart {
   grid-template-columns: 1fr;

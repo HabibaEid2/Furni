@@ -1,22 +1,26 @@
-import {Route, Routes } from "react-router-dom"
-import Home from "./pages/Home/Home"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-import Cart from "./pages/Cart/Cart"
-import Shop from "./pages/Shop/Shop"
-function App() {
-  return (
-    <>
-    <Header/>
-    <Routes>
-      <Route path = "/" element = {<Home/>} />
-      <Route path = "/home" element = {<Home/>} />
-      <Route path = "/shop" element = {<Shop/>} />
-      <Route path = "/cart" element = {<Cart/>} />
-    </Routes>
-    <Footer/>
-    </>
-  )
-}
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home/Home";
+import Cart from "./pages/Cart/Cart";
+import Nav from "./components/Nav";
+import { useContext } from "react";
+import { currentPage } from "./Context";
+import Shop from "./pages/Shop/Shop";
+import Footer from "./components/Footer";
 
-export default App
+export default function App () {
+    const context = useContext(currentPage) ; 
+    return (
+        <>
+        <Header/>
+        <Nav page={context !== null ? context.page : 'home'}/>
+        <Routes>
+            <Route element = {<Home/>} path="/"/>
+            <Route element = {<Home/>} path="/home"/>
+            <Route element = {<Cart/>} path="/cart"/>
+            <Route element = {<Shop/>} path="/shop"/>
+        </Routes>
+        <Footer/>
+        </>
+    )
+}

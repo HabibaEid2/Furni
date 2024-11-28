@@ -1,66 +1,75 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { productData } from '../../api/Api';
-import { decrease, increase, removeFromCart } from '../../redux/reducers';
+import  { ReactNode, useContext, useEffect, useState } from "react";
+import { currentPage } from "../../Context";
+import { useDispatch, useSelector } from "react-redux";
+import { appDispatch, rootState } from "../../redux/store";
+import { decrease, increase, removeFromCart } from "../../redux/reducers";
+
 export default function Cart() {
-    const dispatch = useDispatch() ; 
-    const cartProducts = useSelector((store : any) => store.cartProducts) ; 
-    const increaseF = (id : number) => {
+    const [cartProducts , setCartProducts] = useState<ReactNode[]>([]) ; 
+    const dispatch : appDispatch = useDispatch() ; 
+    const cartProductsSelector = useSelector((state : rootState) => state.cartProducts) ; 
+    const context = useContext(currentPage) ; 
+
+    const increaseQuantity = (id : number) => {
         dispatch(increase(id))
     }
-    const decreaseF = (id : number) => {
+    const decreaseQuantity = (id : number) => {
         dispatch(decrease(id))
     }
-    const removeFromCartF = (id : number) => {
-        dispatch(removeFromCart(id)) ; 
+    const remove = (id : number) => {
+        dispatch(removeFromCart(id))
     }
 
+    useEffect(() => {
+        context?.setPage('cart') ; 
+        setCartProducts((prev : ReactNode[]) : ReactNode[] => {
+            return prev = cartProductsSelector.map(ele => {
+                return (
+                <tr>
+                    <td>
+                        <img src={ele?.image} alt="" />
+                    </td>
+                    <td className="productName">{ele?.productName}</td>
+                    <td>${ele?.price}</td>
+                    <td className="quantity">
+                        <i className="fa-solid fa-minus" onClick={() => decreaseQuantity(ele !== null ? ele?.id : 0)}></i>
+                        <span className="value">{ele?.quantity}</span>
+                        <i className="fa-solid fa-plus" onClick={() => increaseQuantity(ele !== null ? ele?.id : 0)}></i>
+                    </td>
+                    <td>${ele !== null && ele?.quantity  && (ele.price * ele.quantity)}</td>
+                    <td>
+                        <i className="fa-solid fa-trash" onClick={() => remove(ele !== null ? ele?.id : 0)}></i>
+                    </td>
+                </tr>)
+            })
+        })
+    } , [cartProductsSelector])
     return (
+        <>
         <div className="cart-page">
             <div className="container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Image</th>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Remove</th>
+                            <td>Image</td>
+                            <td>Product</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Total</td>
+                            <td>Remove</td>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            cartProducts.length > 0 ?
-                            cartProducts.map((ele : productData) => {
-                                return (
-                                    <tr key={ele.id}>
-                                        <td>
-                                            <img src={ele.image} alt="" />
-                                        </td>
-                                        <td className='name'>{ele.productName}</td>
-                                        <td>${ele.price}.00</td>
-                                        <td className='quantity'>
-                                            <button onClick={() => decreaseF(ele.id)} className='decrease'>
-                                                <i className="fa-solid fa-minus"></i>
-                                            </button>
-                                            <div className="value">{ele.quantity}</div>
-                                            <button onClick={() => increaseF(ele.id)} className='increase'>
-                                                <i className="fa-solid fa-plus"></i>
-                                            </button>
-                                        </td>
-                                        <td>${ele.quantity && ele.quantity * ele.price}.00</td>
-                                        <td>
-                                            <i onClick={() => removeFromCartF(ele.id)} className="fa-solid fa-x"></i>
-                                        </td>
-                                    </tr>
-                                )
-                            }) : <tr className='empty-cart'>
-                                    <td>Cart is Empty</td>
+                            cartProducts.length > 0 ? cartProducts : 
+                            <tr className="empty-cart">
+                                <td>cart is empty full it now !</td>
                             </tr>
                         }
                     </tbody>
                 </table>
             </div>
         </div>
+        </>    
     )
 }

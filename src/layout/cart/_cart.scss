@@ -21,7 +21,7 @@
                 img {
                     width: 100%;
                 }
-                &.name {
+                &.productName {
                     font-weight: 600 ; 
                 }
                 &.quantity {
@@ -34,6 +34,9 @@
                     button {
                         border: none;
                     }
+                }
+                i[class *= trash] {
+                    color: #c92b2b;
                 }
             }
 
