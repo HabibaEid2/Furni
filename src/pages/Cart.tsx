@@ -23,7 +23,7 @@ export default function Cart() {
     useEffect(() => {
         context?.setPage('cart') ; 
         setCartProducts((prev : ReactNode[]) : ReactNode[] => {
-            return prev = cartProductsSelector.map(ele => {
+            prev = cartProductsSelector.map(ele => {
                 return (
                 <tr>
                     <td>
@@ -42,6 +42,7 @@ export default function Cart() {
                     </td>
                 </tr>)
             })
+            return prev ; 
         })
     } , [cartProductsSelector])
     return (
