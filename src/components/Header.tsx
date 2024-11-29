@@ -17,26 +17,26 @@ export default function Header() {
                 <div className="header-content">
                     <ul ref={menu}>
                         <li>
-                            <Link to={'/home'}>Home</Link>
+                            <Link to={'Furni/'}>Home</Link>
                         </li>
                         <li>
-                            <Link to={'/shop'}>Shop</Link>
+                            <Link to={'Furni/shop'}>Shop</Link>
                         </li>
                         <li>
-                            <Link to={'/about-us'}>About Us</Link>
+                            <Link to={'Furni/about-us'}>About Us</Link>
                         </li>
                         <li>
-                            <Link to={'/services'}>Services</Link>
+                            <Link to={'Furni/services'}>Services</Link>
                         </li>
                         <li>
-                            <Link to={'/blog'}>Blog</Link>
+                            <Link to={'Furni/blog'}>Blog</Link>
                         </li>
                         <li>
-                            <Link to={'/contact-us'}>Contact Us</Link>
+                            <Link to={'Furni/contact-us'}>Contact Us</Link>
                         </li>
                         <li className="icons">
                             <i className="fa-regular fa-user"></i>
-                            <Link to = '/cart'>
+                            <Link to = 'Furni/cart'>
                                 <i className="fa-solid fa-cart-shopping"></i>
                             </Link>
                         </li>

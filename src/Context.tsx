@@ -9,7 +9,7 @@ interface values {
 }
 export const currentPage = createContext<values | null>(null) ; 
 export default function Context({children} : props) {
-    const currentLocation = location.pathname.slice(1) ; 
+    const currentLocation = location.pathname.slice(location.pathname.lastIndexOf('/')).slice(1) ; 
     const [page , setPage] = useState(currentLocation) ; 
     return (
         <currentPage.Provider value={{page , setPage}}>{children}</currentPage.Provider>

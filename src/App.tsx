@@ -19,14 +19,13 @@ export default function App () {
         <Header/>
         <Nav page={context !== null ? context.page : 'home'}/>
         <Routes>
-            <Route element = {<Home/>} path="/"/>
-            <Route element = {<Home/>} path="/home"/>
-            <Route element = {<Cart/>} path="/cart"/>
-            <Route element = {<Shop/>} path="/shop"/>
-            <Route element = {<AboutUs/>} path="/about-us"/>
-            <Route element = {<Services/>} path="/services"/>
-            <Route element = {<Blog/>} path="/blog"/>
-            <Route element = {<ContactUs/>} path="/contact-us"/>
+            <Route element = {<Home/>} path="Furni"/>
+            <Route element = {<Cart/>} path="Furni/cart"/>
+            <Route element = {<Shop/>} path="Furni/shop"/>
+            <Route element = {<AboutUs/>} path="Furni/about-us"/>
+            <Route element = {<Services/>} path="Furni/services"/>
+            <Route element = {<Blog/>} path="Furni/blog"/>
+            <Route element = {<ContactUs/>} path="Furni/contact-us"/>
         </Routes>
         <Footer/>
         </>
